@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install
-      run: chmod 755 install-vagrant-deps.sh && time install-vagrant-deps.sh 
+      run: chmod 755 install-vagrant-deps.sh && time install-vagrant-deps.sh
     - name: make 
       run: cd solo-builder && chmod 755 source_sync.sh &&  ./source_sync.sh
     - name: make artoo
