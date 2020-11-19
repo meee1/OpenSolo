@@ -1,0 +1,19 @@
+name: C/C++ CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install
+      run: time install-vagrant-deps.sh 
+    - name: make 
+      run: cd solo-builder && ./source_sync.sh
+    - name: make artoo
+      run: cd artoo && tup
