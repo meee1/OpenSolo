@@ -11,6 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: vagrant
+      run: vagrant up
     - name: install
       run: chmod 755 install-vagrant-deps.sh && time install-vagrant-deps.sh
     - name: make 
